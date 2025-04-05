@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kontakt</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+  <style>
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 0.3rem;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 0.6rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    .service-details {
+      display: none;
+      margin-top: 1rem;
+    }
+    .contact-info {
+      margin-bottom: 2rem;
+    }
+    .contact-info a {
+      display: inline-block;
+      margin-right: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">D</div>
+    <nav>
+      <a href="index.html">Úvod</a>
+      <a href="o-mne.html">O mně</a>
+      <a href="sluzby.html">Služby</a>
+      <a href="cenik.html">Ceník</a>
+      <a href="kontakt.html" class="active">Kontakt</a>
+      <div class="lang-switch">
+        <img src="cz-flag.png" class="lang-icon active" alt="CZ" />
+        <img src="en-flag.png" class="lang-icon" alt="EN" />
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero fade-in">
+      <h1>Kontakt</h1>
+      <p>Ozvěte se mi – těším se na spolupráci</p>
+    </section>
+
+    <section class="contact-section fade-in">
+      <div class="contact-info">
+        <p><strong>Telefon:</strong> +420 123 456 789</p>
+        <p><strong>Email:</strong> info@example.com</p>
+        <p><strong>Instagram:</strong> <a href="#">@moje_sluzby</a></p>
+        <p><strong>Facebook:</strong> <a href="#">facebook.com/mojesluzby</a></p>
+        <p><strong>WhatsApp:</strong> <a href="https://wa.me/420123456789" target="_blank">Napiš mi</a></p>
+      </div>
+
+      <form id="kontakt-form">
+        <div class="form-group">
+          <label for="jmeno">Jméno</label>
+          <input type="text" id="jmeno" name="jmeno" required />
+        </div>
+        <div class="form-group">
+          <label for="prijmeni">Příjmení</label>
+          <input type="text" id="prijmeni" name="prijmeni" required />
+        </div>
+        <div class="form-group">
+          <label for="telefon">Telefon</label>
+          <input type="tel" id="telefon" name="telefon" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+        <div class="form-group">
+          <label for="sluzba">Vyberte službu</label>
+          <select id="sluzba" name="sluzba" required>
+            <option value="">-- Vyberte --</option>
+            <option value="masaz">Masáž</option>
+            <option value="trening">Trénink</option>
+            <option value="video">Video</option>
+            <option value="foceni">Focení</option>
+          </select>
+        </div>
+
+        <!-- Dynamická pole podle služby -->
+        <div id="masaz-details" class="service-details">
+          <div class="form-group">
+            <label for="typ-masaze">Typ masáže</label>
+            <select id="typ-masaze">
+              <option value="">-- Vyberte --</option>
+              <option>Záda</option>
+              <option>Šíje</option>
+              <option>Nohy</option>
+              <option>Ruce</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="masaz-datum">Předběžný termín</label>
+            <input type="date" id="masaz-datum" />
+          </div>
+        </div>
+
+        <div id="trening-details" class="service-details">
+          <div class="form-group">
+            <label for="typ-treningu">Typ tréninku</label>
+            <select id="typ-treningu">
+              <option value="">-- Vyberte --</option>
+              <option>Individuální</option>
+              <option>Dvojice</option>
+              <option>Online plán</option>
+            </select>
+          </div>
+        </div>
+
+        <div id="video-details" class="service-details">
+          <div class="form-group">
+            <label for="video-popis">Popište vaši představu</label>
+            <textarea id="video-popis" rows="4"></textarea>
+          </div>
+        </div>
+
+        <div id="foceni-details" class="service-details">
+          <div class="form-group">
+            <label for="foceni-typ">Typ focení</label>
+            <select id="foceni-typ">
+              <option value="">-- Vyberte --</option>
+              <option>Portréty</option>
+              <option>Produkty</option>
+              <option>Event</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit">Odeslat</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Moje Služby</p>
+  </footer>
+
+  <script>
+    const selectSluzba = document.getElementById('sluzba');
+    const details = {
+      masaz: document.getElementById('masaz-details'),
+      trening: document.getElementById('trening-details'),
+      video: document.getElementById('video-details'),
+      foceni: document.getElementById('foceni-details')
+    };
+
+    selectSluzba.addEventListener('change', () => {
+      Object.values(details).forEach(section => section.style.display = 'none');
+      const selected = selectSluzba.value;
+      if (details[selected]) {
+        details[selected].style.display = 'block';
+      }
+    });
+
+    document.getElementById('
