@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ceník</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+  <style>
+    .accordion-item {
+      margin-bottom: 1rem;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+    }
+
+    .accordion-header {
+      padding: 1rem;
+      cursor: pointer;
+      background: #f0f0f0;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .accordion-header:hover {
+      background: #e0e0e0;
+    }
+
+    .accordion-content {
+      display: none;
+      padding: 1rem;
+      border-top: 1px solid #ddd;
+      background: white;
+    }
+
+    .accordion-content ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .accordion-content li {
+      padding: 0.5rem 0;
+    }
+
+    .accordion-item.active .accordion-content {
+      display: block;
+      animation: fadeIn 0.5s ease-in;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">D</div>
+    <nav>
+      <a href="index.html">Úvod</a>
+      <a href="o-mne.html">O mně</a>
+      <a href="sluzby.html">Služby</a>
+      <a href="cenik.html" class="active">Ceník</a>
+      <a href="kontakt.html">Kontakt</a>
+      <div class="lang-switch">
+        <img src="cz-flag.png" class="lang-icon active" alt="CZ" />
+        <img src="en-flag.png" class="lang-icon" alt="EN" />
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero fade-in">
+      <h1>Ceník služeb</h1>
+      <p>Podívejte se na orientační ceny jednotlivých služeb</p>
+    </section>
+
+    <section class="accordion-section fade-in">
+      <div class="accordion-item">
+        <div class="accordion-header">Masáže</div>
+        <div class="accordion-content">
+          <ul>
+            <li>Záda – 500 Kč / 45 min</li>
+            <li>Šíje – 400 Kč / 30 min</li>
+            <li>Nohy – 500 Kč / 40 min</li>
+            <li>Ruce – 350 Kč / 30 min</li>
+          </ul>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">Osobní trénink</div>
+        <div class="accordion-content">
+          <ul>
+            <li>Individuální – od 600 Kč / hod</li>
+            <li>Dvojice – od 450 Kč / os. / hod</li>
+            <li>Online plán – od 900 Kč / měsíc</li>
+          </ul>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">Taping</div>
+        <div class="accordion-content">
+          <ul>
+            <li>Základní aplikace – od 200 Kč</li>
+            <li>Kombinace s masáží – +100 Kč</li>
+          </ul>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">Video tvorba</div>
+        <div class="accordion-content">
+          <ul>
+            <li>Krátké promo video – od 2000 Kč</li>
+            <li>Reklamní spot – od 3500 Kč</li>
+            <li>Reels & Stories – od 800 Kč / ks</li>
+          </ul>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">Focení</div>
+        <div class="accordion-content">
+          <ul>
+            <li>Portréty – od 1000 Kč / focení</li>
+            <li>Produkty – od 150 Kč / ks</li>
+            <li>Event – od 1200 Kč / hod</li>
+          </ul>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">Grafický design</div>
+        <div class="accordion-content">
+          <ul>
+            <li>Logo – od 1500 Kč</li>
+            <li>Leták / plakát – od 500 Kč</li>
+            <li>Online grafika – od 300 Kč</li>
+          </ul>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <div class="accordion-header">Správa sociálních sítí</div>
+        <div class="accordion-content">
+          <ul>
+            <li>Obsahový balíček – od 1500 Kč / měsíc</li>
+            <li>Plná správa – od 2500 Kč / měsíc</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Moje Služby</p>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.accordion-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const item = header.parentElement;
+        item.classList.toggle('active');
