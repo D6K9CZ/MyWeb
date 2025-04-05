@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Služby</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header>
+    <div class="logo">D</div>
+    <nav>
+      <a href="index.html">Úvod</a>
+      <a href="o-mne.html">O mně</a>
+      <a href="sluzby.html" class="active">Služby</a>
+      <a href="cenik.html">Ceník</a>
+      <a href="kontakt.html">Kontakt</a>
+      <div class="lang-switch">
+        <img src="cz-flag.png" class="lang-icon active" alt="CZ" />
+        <img src="en-flag.png" class="lang-icon" alt="EN" />
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero fade-in">
+      <h1>Moje služby</h1>
+      <p>Vyberte si z nabídky a poznejte víc</p>
+    </section>
+
+    <section class="service-tiles fade-in">
+      <div class="service-tile" onclick="scrollToService('trening')">
+        <img src="icons/fitness.svg" alt="Trénink" />
+        <h3>Osobní trénink</h3>
+      </div>
+      <div class="service-tile" onclick="scrollToService('masaze')">
+        <img src="icons/massage.svg" alt="Masáže" />
+        <h3>Masáže</h3>
+      </div>
+      <div class="service-tile" onclick="scrollToService('taping')">
+        <img src="icons/taping.svg" alt="Taping" />
+        <h3>Taping</h3>
+      </div>
+      <div class="service-tile" onclick="scrollToService('video')">
+        <img src="icons/video.svg" alt="Video" />
+        <h3>Video tvorba</h3>
+      </div>
+      <div class="service-tile" onclick="scrollToService('foto')">
+        <img src="icons/photo.svg" alt="Foto" />
+        <h3>Focení</h3>
+      </div>
+      <div class="service-tile" onclick="scrollToService('design')">
+        <img src="icons/design.svg" alt="Design" />
+        <h3>Grafický design</h3>
+      </div>
+      <div class="service-tile" onclick="scrollToService('social')">
+        <img src="icons/social.svg" alt="Sítě" />
+        <h3>Sociální sítě</h3>
+      </div>
+    </section>
+
+    <section class="services-details fade-in">
+      <div class="service-detail" id="trening">
+        <h2>Osobní trénink</h2>
+        <p>Individuální plán šitý na míru tvým cílům. Silový, kondiční nebo funkční trénink s podporou profesionála.</p>
+        <div class="carousel">📸 Carousel s ukázkami tréninků</div>
+      </div>
+      <div class="service-detail" id="masaze">
+        <h2>Masáže</h2>
+        <p>Relaxační a sportovní masáže, které uvolní tělo i mysl. Včetně zdravotního tapingu.</p>
+        <div class="carousel">📸 Carousel s ukázkami masáží</div>
+      </div>
+      <div class="service-detail" id="taping">
+        <h2>Taping</h2>
+        <p>Podpora regenerace, zmírnění bolesti a zpevnění svalových skupin.</p>
+        <div class="carousel">📸 Carousel s ukázkami tapingu</div>
+      </div>
+      <div class="service-detail" id="video">
+        <h2>Video tvorba</h2>
+        <p>Kreativní produkce krátkých videí, reels, spotů a rozhovorů. Včetně střihu a grafiky.</p>
+        <div class="carousel">🎥 Video galerie</div>
+      </div>
+      <div class="service-detail" id="foto">
+        <h2>Focení</h2>
+        <p>Portréty, akce, produkty i lifestyle focení podle vaší potřeby.</p>
+        <div class="carousel">📸 Carousel s ukázkami fotografií</div>
+      </div>
+      <div class="service-detail" id="design">
+        <h2>Grafický design</h2>
+        <p>Tvorba vizuální identity, logotypů, letáků, plakátů i online bannerů.</p>
+        <div class="carousel">🖼️ Carousel s ukázkami grafiky</div>
+      </div>
+      <div class="service-detail" id="social">
+        <h2>Správa sociálních sítí</h2>
+        <p>Plánování, strategie, tvorba obsahu a kompletní správa vašich sociálních kanálů.</p>
+        <div class="carousel">📱 Carousel s ukázkami příspěvků</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Moje Služby</p>
+  </footer>
+
+  <div id="whatsapp-btn">💬</div>
+
+  <script>
+    function scrollToService(id) {
+      const section = document.getElementById(id);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  </script>
+</body>
+</html>
